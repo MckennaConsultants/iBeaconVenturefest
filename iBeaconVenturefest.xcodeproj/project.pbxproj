@@ -91,11 +91,10 @@
 		0789A7DC1AB09C9A00C1C9D9 /* iBeaconVenturefest */ = {
 			isa = PBXGroup;
 			children = (
+				0789A80C1AB09F1900C1C9D9 /* ViewControllers */,
 				0789A8031AB09DC300C1C9D9 /* iBeacons */,
 				0789A7E11AB09C9A00C1C9D9 /* AppDelegate.h */,
 				0789A7E21AB09C9A00C1C9D9 /* AppDelegate.m */,
-				0789A7E41AB09C9A00C1C9D9 /* ViewController.h */,
-				0789A7E51AB09C9A00C1C9D9 /* ViewController.m */,
 				0789A7E71AB09C9A00C1C9D9 /* Main.storyboard */,
 				0789A7EA1AB09C9A00C1C9D9 /* Images.xcassets */,
 				0789A7EC1AB09C9A00C1C9D9 /* LaunchScreen.xib */,
@@ -147,6 +146,15 @@
 			);
 			name = Frameworks;
 			path = iBeaconVenturefest;
+			sourceTree = "<group>";
+		};
+		0789A80C1AB09F1900C1C9D9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0789A7E41AB09C9A00C1C9D9 /* ViewController.h */,
+				0789A7E51AB09C9A00C1C9D9 /* ViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iBeaconVenturefest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -387,6 +396,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iBeaconVenturefest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
