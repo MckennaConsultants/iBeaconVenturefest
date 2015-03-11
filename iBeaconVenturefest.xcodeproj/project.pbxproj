@@ -14,6 +14,9 @@
 		0789A7EB1AB09C9A00C1C9D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0789A7EA1AB09C9A00C1C9D9 /* Images.xcassets */; };
 		0789A7EE1AB09C9A00C1C9D9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0789A7EC1AB09C9A00C1C9D9 /* LaunchScreen.xib */; };
 		0789A7FA1AB09C9A00C1C9D9 /* iBeaconVenturefestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0789A7F91AB09C9A00C1C9D9 /* iBeaconVenturefestTests.m */; };
+		0789A8061AB09DD800C1C9D9 /* mclBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0789A8051AB09DD800C1C9D9 /* mclBeaconManager.m */; };
+		0789A80A1AB09E7800C1C9D9 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0789A8081AB09E7800C1C9D9 /* CoreBluetooth.framework */; };
+		0789A80B1AB09E7800C1C9D9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0789A8091AB09E7800C1C9D9 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,10 @@
 		0789A7F31AB09C9A00C1C9D9 /* iBeaconVenturefestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBeaconVenturefestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0789A7F81AB09C9A00C1C9D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0789A7F91AB09C9A00C1C9D9 /* iBeaconVenturefestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iBeaconVenturefestTests.m; sourceTree = "<group>"; };
+		0789A8041AB09DD800C1C9D9 /* mclBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mclBeaconManager.h; sourceTree = "<group>"; };
+		0789A8051AB09DD800C1C9D9 /* mclBeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mclBeaconManager.m; sourceTree = "<group>"; };
+		0789A8081AB09E7800C1C9D9 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		0789A8091AB09E7800C1C9D9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0789A80A1AB09E7800C1C9D9 /* CoreBluetooth.framework in Frameworks */,
+				0789A80B1AB09E7800C1C9D9 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +72,7 @@
 		0789A7D11AB09C9A00C1C9D9 = {
 			isa = PBXGroup;
 			children = (
+				0789A8071AB09E1300C1C9D9 /* Frameworks */,
 				0789A7DC1AB09C9A00C1C9D9 /* iBeaconVenturefest */,
 				0789A7F61AB09C9A00C1C9D9 /* iBeaconVenturefestTests */,
 				0789A7DB1AB09C9A00C1C9D9 /* Products */,
@@ -81,6 +91,7 @@
 		0789A7DC1AB09C9A00C1C9D9 /* iBeaconVenturefest */ = {
 			isa = PBXGroup;
 			children = (
+				0789A8031AB09DC300C1C9D9 /* iBeacons */,
 				0789A7E11AB09C9A00C1C9D9 /* AppDelegate.h */,
 				0789A7E21AB09C9A00C1C9D9 /* AppDelegate.m */,
 				0789A7E41AB09C9A00C1C9D9 /* ViewController.h */,
@@ -117,6 +128,25 @@
 				0789A7F81AB09C9A00C1C9D9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0789A8031AB09DC300C1C9D9 /* iBeacons */ = {
+			isa = PBXGroup;
+			children = (
+				0789A8041AB09DD800C1C9D9 /* mclBeaconManager.h */,
+				0789A8051AB09DD800C1C9D9 /* mclBeaconManager.m */,
+			);
+			name = iBeacons;
+			sourceTree = "<group>";
+		};
+		0789A8071AB09E1300C1C9D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0789A8081AB09E7800C1C9D9 /* CoreBluetooth.framework */,
+				0789A8091AB09E7800C1C9D9 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			path = iBeaconVenturefest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0789A8061AB09DD800C1C9D9 /* mclBeaconManager.m in Sources */,
 				0789A7E61AB09C9A00C1C9D9 /* ViewController.m in Sources */,
 				0789A7E31AB09C9A00C1C9D9 /* AppDelegate.m in Sources */,
 				0789A7E01AB09C9A00C1C9D9 /* main.m in Sources */,
@@ -414,6 +445,7 @@
 				0789A7FF1AB09C9A00C1C9D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0789A8001AB09C9A00C1C9D9 /* Build configuration list for PBXNativeTarget "iBeaconVenturefestTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +454,7 @@
 				0789A8021AB09C9A00C1C9D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
