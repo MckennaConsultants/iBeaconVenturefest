@@ -66,11 +66,11 @@
     self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:self.broadcastUUID identifier:self.regionIdentifier];
     
     [self.locationManager startMonitoringForRegion:self.beaconRegion];
+    [self.locationManager startRangingBeaconsInRegion:self.beaconRegion];
 }
 
 - (void)locationManager:(CLLocationManager*)manager didEnterRegion:(CLRegion*)region
 {
-    [self.locationManager startRangingBeaconsInRegion:self.beaconRegion];
     if (self.enteredRegion != nil) {
         self.enteredRegion();
     }

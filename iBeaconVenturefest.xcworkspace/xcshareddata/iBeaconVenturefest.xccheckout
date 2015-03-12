@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2B4D524A-3BDB-4CA4-8DEB-C7856833B4B5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>iBeaconVenturefest</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7F8849A2A6A3E2C53993B907E6B2696E352D0598</key>
+		<string>https://github.com/MckennaConsultants/iBeaconVenturefest.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iBeaconVenturefest.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7F8849A2A6A3E2C53993B907E6B2696E352D0598</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/MckennaConsultants/iBeaconVenturefest.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7F8849A2A6A3E2C53993B907E6B2696E352D0598</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7F8849A2A6A3E2C53993B907E6B2696E352D0598</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iBeaconVenturefest</string>
+		</dict>
+	</array>
+</dict>
+</plist>
