@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:iBeaconReceiver/iBeaconReceiver.xcodeproj">
+      location = "group:iBeaconBroadcaster/iBeaconBroadcaster.xcodeproj">
    </FileRef>
    <FileRef
-      location = "container:iBeaconVenturefest.xcodeproj">
+      location = "group:iBeaconReceiver/iBeaconReceiver.xcodeproj">
    </FileRef>
 </Workspace>
