@@ -98,17 +98,30 @@
 
 -(void)locationManager:(CLLocationManager*)manager didRangeBeacons:(NSArray*)beacons inRegion:(CLBeaconRegion*)region
 {
-    CLBeacon *foundBeacon = [beacons firstObject];
-    if (foundBeacon != nil) {
-        // You can retrieve the beacon data from its properties
-        //NSString *uuid = foundBeacon.proximityUUID.UUIDString;
-        NSString *major = [NSString stringWithFormat:@"%@", foundBeacon.major];
-        NSString *minor = [NSString stringWithFormat:@"%@", foundBeacon.minor];
-    
-        self.statusLabel.text = [NSString stringWithFormat:@"Beacon %@.%@ found. Range: %f", major, minor, foundBeacon.accuracy];
-        [self setProximity:foundBeacon.proximity];
-    }
-    else {
+    if ([beacons count] > 0) {
+        CLBeacon *nearestBeacon = nil;
+        
+        for (CLBeacon *foundBeacon in beacons) {
+            // You can retrieve the beacon data from its properties
+            //NSString *uuid = foundBeacon.proximityUUID.UUIDString;
+            //NSString *major = [NSString stringWithFormat:@"%@", foundBeacon.major];
+            //NSString *minor = [NSString stringWithFormat:@"%@", foundBeacon.minor];
+            
+            if (nearestBeacon == nil) {
+                nearestBeacon = foundBeacon;
+            } else if (foundBeacon.accuracy < nearestBeacon.accuracy) {
+               nearestBeacon = foundBeacon;
+            }
+        }
+        
+        if (nearestBeacon != nil) {
+            NSString *major = [NSString stringWithFormat:@"%@", nearestBeacon.major];
+            NSString *minor = [NSString stringWithFormat:@"%@", nearestBeacon.minor];
+            self.statusLabel.text = [NSString stringWithFormat:@"Nearest beacon %@.%@. Range: %f", major, minor, nearestBeacon.accuracy];
+            [self setProximity:nearestBeacon.proximity];
+        }
+        
+    } else {
         self.statusLabel.text = @"No beacons found";
         [self resetProximity];
     }
