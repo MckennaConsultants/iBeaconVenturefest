@@ -20,7 +20,10 @@
 
 @end
 
-@implementation mclViewController
+@implementation mclViewController {
+    UIViewController *_currentModal;
+    NSString *_currentSegue;
+}
 
 - (IBAction)unwindHandler:(id)sender {
     
@@ -42,6 +45,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    self->_currentSegue = [segue identifier];
+    self->_currentModal = [segue destinationViewController];
 }
 
 - (void) initLocationManager {
@@ -123,6 +131,20 @@
             NSString *minor = [NSString stringWithFormat:@"%@", nearestBeacon.minor];
             self.statusLabel.text = [NSString stringWithFormat:@"Nearest beacon %@.%@. Range: %f", major, minor, nearestBeacon.accuracy];
             [self setProximity:nearestBeacon.proximity];
+            
+            if ([nearestBeacon.minor integerValue] == 1 &&
+               (self->_currentSegue == nil || [self->_currentSegue compare:@"agileSegue"] != NSOrderedSame)) {
+                if (self->_currentModal != nil) {
+                    [self->_currentModal dismissViewControllerAnimated:NO completion:nil];
+                }
+                [self performSegueWithIdentifier:@"agileSegue" sender:self];
+            } else if ([nearestBeacon.minor integerValue] == 2 &&
+                       (self->_currentSegue == nil || [self->_currentSegue compare:@"appSegue"] != NSOrderedSame)) {
+                if (self->_currentModal != nil) {
+                    [self->_currentModal dismissViewControllerAnimated:NO completion:nil];
+                }
+                [self performSegueWithIdentifier:@"appSegue" sender:self];
+            }
         }
         
     } else {
