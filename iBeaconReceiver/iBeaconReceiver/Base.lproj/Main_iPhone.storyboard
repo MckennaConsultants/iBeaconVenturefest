@@ -171,12 +171,34 @@ We empower, transform and teach small, medium and large software development tea
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="App" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPI-VF-qQZ">
-                                <rect key="frame" x="139" y="229" width="32" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mobile App Development" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAc-5k-s10">
+                                <rect key="frame" x="73" y="28" width="223" height="58"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAl-F4-1LZ">
+                                <rect key="frame" x="16" y="94" width="288" height="191"/>
+                                <string key="text">Developing amazing mobile apps since 2010. Whether you need an iPhone Application, a brand new Windows 8 Metro app, some Android development or a Blackberry app then you’re in the right place! We can turn your ideas into reality on the latest Smartphone technology!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="app1" translatesAutoresizingMaskIntoConstraints="NO" id="N7E-04-plZ">
+                                <rect key="frame" x="26" y="293" width="120" height="120"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="app2" translatesAutoresizingMaskIntoConstraints="NO" id="XFB-it-C6Y">
+                                <rect key="frame" x="168" y="293" width="120" height="120"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="app3" translatesAutoresizingMaskIntoConstraints="NO" id="eJ6-FE-pnI">
+                                <rect key="frame" x="26" y="421" width="120" height="120"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mcl-icon" translatesAutoresizingMaskIntoConstraints="NO" id="SFR-X8-gUf">
+                                <rect key="frame" x="16" y="28" width="62" height="58"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="app4" translatesAutoresizingMaskIntoConstraints="NO" id="Qf9-DV-PPq">
+                                <rect key="frame" x="168" y="421" width="120" height="120"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -193,6 +215,10 @@ We empower, transform and teach small, medium and large software development tea
         <image name="agile-medium" width="45" height="45"/>
         <image name="agile-small" width="45" height="45"/>
         <image name="agile-training" width="45" height="45"/>
+        <image name="app1" width="107" height="100"/>
+        <image name="app2" width="139" height="100"/>
+        <image name="app3" width="175" height="97"/>
+        <image name="app4" width="134" height="100"/>
         <image name="mcl-icon" width="1320" height="1233"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
