@@ -23,27 +23,66 @@
 @implementation mclViewController
 
 - (IBAction)startHandler:(id)sender {
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.delegate = self;
-    
-    NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"C08FF959-04B7-4603-8860-018AC72C95E1"];
-    
-    self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"com.mckennaconsultants.ibeacon"];
-    
-    [self.locationManager startMonitoringForRegion:self.beaconRegion];
-    [self.locationManager startRangingBeaconsInRegion:self.beaconRegion];
+    [self initLocationManager];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    //[self initLocationManager];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) initLocationManager {
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+    
+    if (status == kCLAuthorizationStatusRestricted ||
+        status == kCLAuthorizationStatusDenied) {
+        self.statusLabel.text = @"Not authorised";
+        return;
+    }
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    
+    if (status == kCLAuthorizationStatusNotDetermined) {
+        [self.locationManager requestAlwaysAuthorization];
+        [CLLocationManager locationServicesEnabled];
+    } else if (status == kCLAuthorizationStatusAuthorizedAlways ||
+               status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        self.statusLabel.text = @"Waiting for authorisation";
+        [self startSearchingForBeacons];
+    } else {
+        self.statusLabel.text = @"Something aint right";
+    }
+}
+
+- (void) startSearchingForBeacons {
+    NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"C08FF959-04B7-4603-8860-018AC72C95E1"];
+    
+    self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"com.mckennaconsultants.ibeacon"];
+    
+    [self.locationManager startMonitoringForRegion:self.beaconRegion];
+    [self.locationManager startRangingBeaconsInRegion:self.beaconRegion];
+    
+    self.statusLabel.text = @"Searching for beacons...";
+}
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    if (status == kCLAuthorizationStatusAuthorizedAlways ||
+        status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [self startSearchingForBeacons];
+    } else if (status == kCLAuthorizationStatusRestricted ||
+               status == kCLAuthorizationStatusDenied) {
+        self.statusLabel.text = @"Not authorised";
+    }
 }
 
 - (void)locationManager:(CLLocationManager*)manager didEnterRegion:(CLRegion*)region
