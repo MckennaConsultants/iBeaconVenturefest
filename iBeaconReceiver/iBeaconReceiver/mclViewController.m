@@ -22,6 +22,10 @@
 
 @implementation mclViewController
 
+- (IBAction)unwindHandler:(id)sender {
+    
+}
+
 - (IBAction)startHandler:(id)sender {
     [self initLocationManager];
 }
