@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *nearLabel;
 @property (strong, nonatomic) IBOutlet UILabel *farLabel;
 @property (strong, nonatomic) IBOutlet UILabel *unknownLabel;
+@property (strong, nonatomic) IBOutlet UIButton *startButton;
 
 @property (weak, nonatomic) UIViewController *currentModal;
 @property (copy, nonatomic) NSString *currentSegue;
@@ -25,11 +26,8 @@
 
 @implementation mclViewController
 
-- (IBAction)unwindHandler:(id)sender {
-    
-}
-
 - (IBAction)startHandler:(id)sender {
+    self.startButton.enabled = NO;
     [self initLocationManager];
 }
 

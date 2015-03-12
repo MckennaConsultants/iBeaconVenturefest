@@ -52,14 +52,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8z8-2Q-P6P">
-                                <rect key="frame" x="107" y="225" width="106" height="30"/>
-                                <state key="normal" title="Start Searching">
+                                <rect key="frame" x="107" y="225" width="78" height="30"/>
+                                <state key="normal" title="Start Demo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="startHandler:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6H8-8y-c40"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MCL" translatesAutoresizingMaskIntoConstraints="NO" id="3Vz-Ym-Cdo">
+                                <rect key="frame" x="40" y="28" width="240" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Venturefest" translatesAutoresizingMaskIntoConstraints="NO" id="IcT-0W-2hs">
+                                <rect key="frame" x="26" y="263" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -67,6 +73,7 @@
                         <outlet property="farLabel" destination="lXa-Km-dHR" id="hLs-2v-VDm"/>
                         <outlet property="intermediateLabel" destination="sZK-50-5ol" id="U7o-Jg-huA"/>
                         <outlet property="nearLabel" destination="od1-PG-gku" id="mUN-s5-Jpi"/>
+                        <outlet property="startButton" destination="8z8-2Q-P6P" id="dHl-EP-0Pa"/>
                         <outlet property="statusLabel" destination="xri-Bo-OG7" id="Jr2-HH-pAa"/>
                         <outlet property="unknownLabel" destination="gIP-FN-ouG" id="anD-bW-f1u"/>
                         <segue destination="hBu-zf-xVU" kind="modal" identifier="agileSegue" id="hkm-Ur-buU"/>
@@ -95,12 +102,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dF1-l1-eCh">
-                                <rect key="frame" x="135" y="191" width="40" height="30"/>
-                                <state key="normal" title="Close">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -128,12 +129,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qh-bG-gdQ">
-                                <rect key="frame" x="132" y="191" width="40" height="30"/>
-                                <state key="normal" title="Close">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -143,6 +138,10 @@
             <point key="canvasLocation" x="579" y="628"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MCL" width="189" height="87"/>
+        <image name="Venturefest" width="107" height="23"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
