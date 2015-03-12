@@ -18,12 +18,12 @@
 @property (strong, nonatomic) IBOutlet UILabel *farLabel;
 @property (strong, nonatomic) IBOutlet UILabel *unknownLabel;
 
+@property (weak, nonatomic) UIViewController *currentModal;
+@property (copy, nonatomic) NSString *currentSegue;
+
 @end
 
-@implementation mclViewController {
-    UIViewController *_currentModal;
-    NSString *_currentSegue;
-}
+@implementation mclViewController
 
 - (IBAction)unwindHandler:(id)sender {
     
@@ -48,8 +48,8 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    self->_currentSegue = [segue identifier];
-    self->_currentModal = [segue destinationViewController];
+    self.currentSegue = [segue identifier];
+    self.currentModal = [segue destinationViewController];
 }
 
 - (void) initLocationManager {
@@ -133,15 +133,17 @@
             [self setProximity:nearestBeacon.proximity];
             
             if ([nearestBeacon.minor integerValue] == 1 &&
-               (self->_currentSegue == nil || [self->_currentSegue compare:@"agileSegue"] != NSOrderedSame)) {
-                if (self->_currentModal != nil) {
-                    [self->_currentModal dismissViewControllerAnimated:NO completion:nil];
+               (self.currentSegue == nil || [self.currentSegue compare:@"agileSegue"] != NSOrderedSame)) {
+                if (self.currentModal != nil) {
+                    self.currentSegue = nil;
+                    [self.currentModal dismissViewControllerAnimated:NO completion:nil];
                 }
                 [self performSegueWithIdentifier:@"agileSegue" sender:self];
             } else if ([nearestBeacon.minor integerValue] == 2 &&
-                       (self->_currentSegue == nil || [self->_currentSegue compare:@"appSegue"] != NSOrderedSame)) {
-                if (self->_currentModal != nil) {
-                    [self->_currentModal dismissViewControllerAnimated:NO completion:nil];
+                       (self.currentSegue == nil || [self.currentSegue compare:@"appSegue"] != NSOrderedSame)) {
+                if (self.currentModal != nil) {
+                    self.currentSegue = nil;
+                    [self.currentModal dismissViewControllerAnimated:NO completion:nil];
                 }
                 [self performSegueWithIdentifier:@"appSegue" sender:self];
             }
